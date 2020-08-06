@@ -31,6 +31,7 @@
 
     <!-- Modernizer for Portfolio -->
     <script src="js/modernizer.js"></script>
+ <script src="js/log.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -76,13 +77,10 @@
 									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
 								</div>
 							</div>
+							</div>
+							
 						</form>
-					</div>
-					  <div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-    <button onclick="logout()">Logout</button>
-  </div>
+					
 					<div class="tab-pane" id="Registration">
 						<form role="form" class="form-horizontal">
 							<div class="form-group">
@@ -116,10 +114,17 @@
 							</div>
 						</form>
 					</div>
+
 				</div>
 			</div>
+			
 		</div>
 	  </div>
+	  <div id="user_div" class="loggedin-div">
+    						<h3>Welcome User</h3>
+   							 <p id="user_para">Welcome to Firebase web login Example.<br> You're currently logged in.</p>
+   							 <button onclick="logout()">Logout</button>
+  							</div>
 	</div>
 
     <!-- LOADER -->
@@ -168,7 +173,7 @@
 						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-                        <li><a class="hover-btn-new log orange" href="https://m.facebook.com/groups/784996545201750" data-toggle="modal" data-target="#login"><span>Join Now</span></a></li>
+                        <li><a class="hover-btn-new log orange" href="" data-toggle="modal" data-target="#login"><span>Join Now</span></a></li>
                     </ul>
 				</div>
 			</div>
@@ -584,11 +589,8 @@
 		});
 	</script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
 
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
   <script>
