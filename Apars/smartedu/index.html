@@ -60,12 +60,12 @@
 						<form role="form" class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="email1" placeholder="Name" type="text">
+									<input class="form-control" id="email1" placeholder="Name" type="email">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="exampleInputPassword1" placeholder="Email" type="email">
+									<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
 								</div>
 							</div>
 							<div class="row">
@@ -578,5 +578,28 @@
 			visibleItems: 4
 		});
 	</script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAh6cUTSjFFd-eFq5htAto3-USIhZIYmWQ",
+    authDomain: "chat-app-mridul-bhai.firebaseapp.com",
+    databaseURL: "https://chat-app-mridul-bhai.firebaseio.com",
+    projectId: "chat-app-mridul-bhai",
+    storageBucket: "chat-app-mridul-bhai.appspot.com",
+    messagingSenderId: "716664329898",
+    appId: "1:716664329898:web:a58297f97d0d051b61e2d3",
+    measurementId: "G-5QT8R2BF92"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>	
 </body>
 </html>
