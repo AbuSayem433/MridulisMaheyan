@@ -583,28 +583,26 @@
 			visibleItems: 4
 		});
 	</script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAh6cUTSjFFd-eFq5htAto3-USIhZIYmWQ",
-    authDomain: "chat-app-mridul-bhai.firebaseapp.com",
-    databaseURL: "https://chat-app-mridul-bhai.firebaseio.com",
-    projectId: "chat-app-mridul-bhai",
-    storageBucket: "chat-app-mridul-bhai.appspot.com",
-    messagingSenderId: "716664329898",
-    
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>	
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAh6cUTSjFFd-eFq5htAto3-USIhZIYmWQ",
+      authDomain: "chat-app-mridul-bhai.firebaseapp.com",
+      databaseURL: "https://chat-app-mridul-bhai.firebaseio.com",
+      projectId: "chat-app-mridul-bhai",
+      storageBucket: "chat-app-mridul-bhai.appspot.com",
+      messagingSenderId: "716664329898"
+      
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 </html>
