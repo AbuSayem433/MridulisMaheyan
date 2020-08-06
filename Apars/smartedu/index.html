@@ -60,7 +60,7 @@
 						<form role="form" class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="email1" placeholder="Name" type="email">
+									<input class="form-control" id="email1" placeholder="Email" type="email">
 								</div>
 							</div>
 							<div class="form-group">
@@ -70,7 +70,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-10">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
+									<button onclick="login()" type="submit" class="btn btn-light btn-radius btn-brd grd1">
 										Submit
 									</button>
 									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
@@ -78,6 +78,11 @@
 							</div>
 						</form>
 					</div>
+					  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
 					<div class="tab-pane" id="Registration">
 						<form role="form" class="form-horizontal">
 							<div class="form-group">
@@ -584,6 +589,7 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -594,8 +600,7 @@
     projectId: "chat-app-mridul-bhai",
     storageBucket: "chat-app-mridul-bhai.appspot.com",
     messagingSenderId: "716664329898",
-    appId: "1:716664329898:web:a58297f97d0d051b61e2d3",
-    measurementId: "G-5QT8R2BF92"
+    
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
