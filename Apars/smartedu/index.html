@@ -31,7 +31,7 @@
 
     <!-- Modernizer for Portfolio -->
     <script src="js/modernizer.js"></script>
- <script src="js/log.js"></script>
+ 	
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -589,10 +589,10 @@
 		});
 	</script>
 
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-
+	
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -600,11 +600,14 @@
       authDomain: "chat-app-mridul-bhai.firebaseapp.com",
       databaseURL: "https://chat-app-mridul-bhai.firebaseio.com",
       projectId: "chat-app-mridul-bhai",
-      storageBucket: "chat-app-mridul-bhai.appspot.com",
-      messagingSenderId: "716664329898"
       
     };
     firebase.initializeApp(config);
+
+    //make auth and firebase references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
   </script>
+  <script src="js/log.js"></script>
 </body>
 </html>
