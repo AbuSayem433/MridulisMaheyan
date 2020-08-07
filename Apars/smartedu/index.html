@@ -41,85 +41,69 @@
 </head>
 <body class="host_version"> 
 
-	<!-- Modal -->
-	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header tit-up">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Customer Login</h4>
-			</div>
-			<div class="modal-body customer-box">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs">
-					<li><a class="active" href="#login-form" data-toggle="tab">Login</a></li>
-					<li><a href="#signup-form" data-toggle="tab">Sign Up</a></li>
-				</ul>
-				<!-- Tab panes -->
-				<div class="tab-content" id="modal-login" >
-					<div class="tab-pane active" >
-						<form id="login-form" role="form" class="form-horizontal">
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="login-email" placeholder="Email" type="email">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="login-password" placeholder="Password" type="password">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-10">
-									<button class="btn btn-light btn-radius btn-brd grd1">
-										Login
-									</button>
-									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
-								</div>
-							</div>
-							</div>
-							
-						</form>
-					
-					<div class="tab-pane" id="modal-signup">
-						<form id="signup-form" role="form" class="form-horizontal">
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" placeholder="Name" type="text">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="signup-email" placeholder="Email" type="email" required>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="mobile" placeholder="Mobile" type="number">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="signup-password" placeholder="Password" type="password" required >
-								</div>
-							</div>
-							<div class="row">							
-								<div class="col-sm-10">
-									<button class="btn btn-light btn-radius btn-brd grd1">
-										Save &amp; Continue
-									</button>
-									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
-										Cancel</button>
-								</div>
-							</div>
-						</form>
-					</div>
+	  <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="img/logo.svg" style="width: 180px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
 
-				</div>
-			</div>
-	  </div>
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
 
-	  </div>
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
 
     <!-- LOADER -->
 	<div id="preloader">
@@ -603,7 +587,7 @@
     const db = firebase.firestore();
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="scripts/auth.js"></script>
-  <script src="scripts/index.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
