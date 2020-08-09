@@ -58,18 +58,17 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="Login">
 						<div class="form-control">
-				  
-				          <h2 class="form-control">User sign-in status</h2>
-			
+							<!-- Container for the sign in status and user info -->
+				          <h2>User sign-in status</h2>
+				        </div>
 				          <!-- Container where we'll display the user details -->
-				         
-				            Firebase sign-in status: <span id="sign-in-status">Unknown</span>
+				          <div class="user-details-container">
+				            Apars's Classroom sign-in status: <span id="sign-in-status">Unknown</span>
 				            <div>Firebase auth <code>currentUser</code> object value:</div>
 				            <pre><code id="account-details">null</code></pre>
 				          </div>
-				        </div>
 				      </div>
-					</div>
+
 					<div class="tab-pane" id="Registration">
 						<form id="sign-in-form" role="form" class="form-horizontal">
 							<!-- Input to enter the phone number -->
