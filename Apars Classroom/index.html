@@ -51,66 +51,60 @@
 			<div class="modal-body customer-box">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
-					<li><a class="active" href="#Login" data-toggle="tab">Login</a></li>
 					<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+					<li><a class="active" href="#Login" data-toggle="tab">Account Status</a></li>
 				</ul>
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div class="tab-pane active" id="Login">
-						<form role="form" class="form-horizontal">
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="email1" placeholder="Email" type="email">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-10">
-									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-										Submit
-									</button>
-									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
-								</div>
-							</div>
-						</form>
+						<div class="form-control">
+				  
+				          <h2 class="form-control">User sign-in status</h2>
+			
+				          <!-- Container where we'll display the user details -->
+				         
+				            Firebase sign-in status: <span id="sign-in-status">Unknown</span>
+				            <div>Firebase auth <code>currentUser</code> object value:</div>
+				            <pre><code id="account-details">null</code></pre>
+				          </div>
+				        </div>
+				      </div>
 					</div>
 					<div class="tab-pane" id="Registration">
-						<form role="form" class="form-horizontal">
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" placeholder="Name" type="text">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="email" placeholder="Email" type="email">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="mobile" placeholder="Mobile" type="email">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-12">
-									<input class="form-control" id="password" placeholder="Password" type="password">
-								</div>
-							</div>
+						<form id="sign-in-form" role="form" class="form-horizontal">
+							<!-- Input to enter the phone number -->
+				            <div class="form-group">
+				              <input class="form-control" type="text" pattern="\+[0-9\s\-\(\)]+" id="phone-number">
+				              <label for="phone-number">Enter your phone number...</label>
+				              <span >Input is not an international phone number! Please use +88 before your phone number</span>
+				            </div>
+				            <!-- Container to display the re-captcha check -->
+            				<div id="recaptcha-container"></div>
+				            <p> Standard Charges may apply </p>
 							<div class="row">							
 								<div class="col-sm-10">
-									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
-										Save &amp; Continue
-									</button>
-									<button type="button" class="btn btn-light btn-radius btn-brd grd1">
-										Cancel</button>
+									<input type="submit" class="btn btn-light btn-radius btn-brd grd1" id="sign-in-button"value="Sign-in"/>
 								</div>
 							</div>
 						</form>
+
+					<div>
+						<!-- Button that handles sign-out -->
+						<button class="btn btn-light btn-radius btn-brd grd1" id="sign-out-button">Sign-out</button>
+			          <form id="verification-code-form" action="#">
+			            <!-- Input to enter the verification code -->
+			            <div class="form-group">
+			              <input class="form-control" type="text" id="verification-code">
+			              <label for="verification-code">Enter the verification code...</label>
+			            </div>
+
+			            <!-- Button that triggers code verification -->
+			            <input type="submit" class="btn btn-light btn-radius btn-brd grd1" id="verify-code-button" value="Verify Code"/>
+			            <!-- Button to cancel code verification -->
+			            <button class="btn btn-light btn-radius btn-brd grd1" id="cancel-verify-code-button">Cancel</button>
+			          </form>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>
@@ -586,6 +580,31 @@
 			visibleItems: 4
 		});
 	</script>
+	<!-- Import and configure the Firebase SDK -->
+<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+<!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+ 
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAh6cUTSjFFd-eFq5htAto3-USIhZIYmWQ",
+      authDomain: "chat-app-mridul-bhai.firebaseapp.com",
+      databaseURL: "https://chat-app-mridul-bhai.firebaseio.com",
+      projectId: "chat-app-mridul-bhai",
+      
+    };
+    firebase.initializeApp(config);
+
+    //make auth and firebase references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+
+<script src="js/auth.js"></script>
+
 	<script type="text/javascript">
 /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
 (function(d, m){

@@ -60,12 +60,22 @@
 						<form id="login-form" role="form" class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-12">
+									<input class="form-control" placeholder="Name" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
 									<input class="form-control" id="login-email" placeholder="Email" type="email" required />
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input class="form-control" id="login-password" placeholder="Password" type="password" required />
+									<input class="form-control" id="login-password" placeholder="Password" type="password" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="phone-number" pattern="\+[0-9\s\-\(\)]+" placeholder="+880 1XX XXX XXXX" type="text" required/>
 								</div>
 							</div>
 							<div class="row">
@@ -89,6 +99,7 @@
 									<input class="form-control" id="signup-password" placeholder="Password" type="password" required />
 								</div>
 							</div>
+
 							<div class="row">							
 								<div class="col-sm-10">
 									<button type="submit" class="btn btn-light btn-radius btn-brd grd1">
